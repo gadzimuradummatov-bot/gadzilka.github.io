@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биография создателя</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0f0f;
+            color: white;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .hero {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #4ecdc4;
+            text-align: center;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #4ecdc4;
+        }
+
+        .contact-card p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(78, 205, 196, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid #4ecdc4;
+        }
+
+        @media (max-width: 768px) {
+            .back-link {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin: 20px;
+            }
+            
+            .hero {
+                padding: 80px 20px 60px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Назад на главную</a>
+    
+    <section class="hero">
+        <div class="profile-image">👨‍💻</div>
+        <h1>Умматов Гаджимурад</h1>
+        <p class="subtitle">Создатель данного проекта</p>
+    </section>
+
+    <div class="content">
+        <section class="section">
+            <h2 class="section-title">Обо мне</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto; font-size: 1.1em;">
+                Я занимаюсь разработкой современных веб-проектов, создаю удобные и функциональные интерфейсы. 
+                Этот проект — результат моей страсти к созданию качественных digital-решений.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Свяжитесь со мной</h2>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="https://www.google.org/">gadzimuradummatov@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <h3>Телефон</h3>
+                    <a href="https://www.whatsapp.com/?lang=ru_RU">+7 (933) 222-23-67</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
