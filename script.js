@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
     });
+    
 
     // Функция проверки формы
     function checkForm(data) {
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Функция показа ошибок
+    
     function showErrors(errors) {
         for (const field in errors) {
             const errorElement = document.getElementById(field + 'Error');
@@ -88,21 +90,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Функция показа успешного сообщения
     function showSuccess(data) {
-        const successElement = document.getElementById('successMessage');
-        if (!successElement) return;
+    const successElement = document.getElementById('successMessage');
+    if (!successElement) return;
 
-        successElement.innerHTML = `
-            <h3>Спасибо, ${data.name}!</h3>
-            <p>Ваше сообщение успешно отправлено. Мы свяжемся с вами в ближайшее время.</p>
-        `;
-        
-        successElement.style.display = 'block';
-        
-        // Автоматически скрываем сообщение через 5 секунд
-        setTimeout(() => {
-            successElement.style.display = 'none';
-        }, 5000);
-    }
+    successElement.innerHTML = `
+        <h3>Спасибо, ${data.name}!</h3>
+        <p><strong>Ваши данные:</strong></p>
+        <p><strong>Имя:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Комментарий:</strong> ${data.comment}</p>
+        <p style="margin-top: 1rem;">Мы свяжемся с вами в ближайшее время.</p>
+    `;
+    
+    successElement.style.display = 'block';
+    
+    // Автоматически скрываем сообщение через 8 секунд (увеличил время для чтения)
+    setTimeout(() => {
+        successElement.style.display = 'none';
+    }, 30000);
+}
 
     // Функция скрытия ошибок
     function hideErrors() {
